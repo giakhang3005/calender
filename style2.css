@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    /* background: #ffa9da; */
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background: white;
+    width: 99%;
+    height: 99vh;
+    border-radius: 7px;
+}
+
+.wrapper header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 26px 6vh 32px;
+    line-height: 38px;
+}
+.wrapper header .current-date {
+    font-size: 23px;
+    font-weight: 600;
+}
+.arrow {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor:pointer;
+    padding: 8px 12px 8px 12px;
+    background: #dbdbdb;
+    border-radius: 7px;
+}
+.arrow:hover {
+    background: #e2e2e2e2;
+}
+
+.calender{
+    margin: 0 10px 15px 10px;
+}
+.calender ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    /* text-align: center; */
+}
+.calender .week {
+    text-align: center;
+}
+.calender .week {
+    font-weight: 600;
+}
+.calender ul li {
+    position: relative;
+    width: calc(100%/7);
+}
+
+.date {
+    margin-top: 20px;
+    cursor: pointer;
+}
+.date li {
+    /* margin-top: 30px; */
+    position: absolute;
+    padding: 4px 0 0 8px;
+    border: 1px solid rgb(186, 186, 186);
+    height: calc(100vh/7.6);
+    z-index: 1;
+    overflow-wrap: hidden;
+}
+.today {
+    color: white;
+    font-weight: 400;
+}
+.calender .date .today::after {
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 1.8px;
+    height: 22px;
+    width: 22px;
+    background: #ff2252;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.calender .date .booked { 
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    content: "";
+    border: rgb(186, 186, 186) solid 1px;
+    width: 90%;
+    height:calc(100%/3);
+    border-radius: 8px;
+    margin: 4px 0 0 0;
+    box-shadow: 2px 2px 2px #a2a2a2;
+    cursor: pointer;
+}
+.calender .date .booked:hover {
+    background: rgb(246, 246, 246);
+}
+.date .booked .bookedTime {
+    position: absolute;
+    content: '';
+    width: 90%;
+    line-height: 80%;
+    color:black;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50%;
+    top: 51%;
+    left: 7px;
+    transform: translate(0, -50%);
+}
+.date .booked .bookedStatus {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    /* background: rgb(255, 225, 0); */
+    border-radius: 50%;
+    right: 5px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.inactive {
+    color: #a2a2a2;
+}
+
